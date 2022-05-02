@@ -19,8 +19,3 @@ h1 {
   background: white;
   height: 100vh;
 }
-
-.triangle {
-  background: var(--main-color);
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-}
