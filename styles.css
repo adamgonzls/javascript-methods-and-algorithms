@@ -7,6 +7,10 @@
 body {
   margin: 0;
   background: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 h1 {
@@ -14,8 +18,7 @@ h1 {
 }
 
 .page-container {
-  margin: 0 auto;
   width: 90%;
   background: white;
-  height: 100vh;
+  min-height: 90vh;
 }
