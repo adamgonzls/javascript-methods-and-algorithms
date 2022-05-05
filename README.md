@@ -292,3 +292,157 @@ const randomNumber = 3.1475926535
 
 console.log(randomNumber.toPrecision(4)) // 3.148
 ```
+
+## Arrays
+
+### Array Properties
+
+Get the length of an array `Array.length`
+
+```
+const reptiles = ['Snake', 'Frog', 'Lizard']
+
+console.log(reptiles.length) // 3
+```
+
+Array.isArray()
+
+Check whether passed value is an array
+
+```
+const reptiles = ['Snake', 'Frog', 'Lizard']
+
+console.log(Array.isArray(reptiles)) // true
+```
+
+### Array method .concat()
+
+Used to merge two or more arrays. Does not change the existing arrays, but instead returns a new array.
+
+```
+const reptiles = ['Snake', 'Frog', 'Lizard']
+const birds = ['Ostrich', 'Eagle', 'Peacock']
+const mammals = ['Lion', 'Sheep', 'Wolf']
+const animalKingdom = reptiles.concat(birds, mammals)
+
+console.log(animalKingdom) // ['Snake', 'Frog', 'Lizard', 'Ostrich', 'Eagle', 'Peacock', 'Lion', 'Sheep', 'Wolf']
+```
+
+### Array method .entries()
+
+This method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
+
+```
+const reptiles = ['Snake', 'Frog', 'Lizard']
+const reptileIterator = reptiles.entries()
+
+console.log(reptileIterator.next().value) // [0, 'Snake']
+console.log(reptileIterator.next().value) // [1, 'Frog']
+```
+
+### Array method .every()
+
+Tests whether all elements in the array pass the test implemented by the provided function.
+
+```
+const grades = [98, 68, 92]
+const allPassing = grades.every(grade => grade > 69)
+
+console.log(allPassing) // false
+```
+
+### Array method .fill()
+
+Changes all elements in an array to a static value, from a start index to an end index, it returns the modified array.
+
+`fill(value, start, end)`
+
+```
+const beginningGrades = new Array(10).fill(0)
+
+console.log(beginningGrades) // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+```
+
+### Array method .filter()
+
+Creates a new array with all the elements that pass the test implemented by the provided function.
+
+```
+const grades = [99, 85, 92, 62, 88, 69]
+const failingGrades = grades.filter(grade => grade < 70)
+
+console.log(failingGrades) // [62, 69]
+```
+
+### Array method .find()
+
+Returns the first element in the provided array that satisfies the provided testing function. If no values pass, undefined is returned.
+
+```
+const grades = [99, 85, 92, 62, 88, 69]
+const firstFailingGrade = grades.find(grade => grade < 70)
+
+console.log(firstFailingGrade) // [62]
+```
+
+### Array method .findIndex()
+
+Returns the index of the first element in the array that satisfies the provided testing function, otherwise returns -1.
+
+```
+const grades = [99, 85, 92, 62, 88, 69]
+const firstFailIndex = grades.findIndex(grade => grade < 70)
+
+console.log(firstFailIndex) // [3]
+```
+
+### Array method .forEach()
+
+Executes a provided function on each element in the array.
+
+```
+const nums = [3, 6, 9]
+nums.forEach(num => console.log(num * num)) // 9, 36, 81
+```
+
+### Array method .includes()
+
+Determines whether an array includes a certain value, returning true or false. Case sensitive.
+
+```
+const beers = ['IPA', 'Pilsner', 'Lager']
+
+console.log(beers.includes('IPA')) // true
+```
+
+### Array method .indexOf()
+
+Returns the first index at which a match can be found in the array.
+
+```
+const beers = ['IPA', 'Pilsner', 'Lager']
+
+console.log(beers.indexOf('IPA')) // 0
+```
+
+### Array method join()
+
+Creates and returns a new string by concatenating all of the elements of an array.
+
+```
+const beers = ['IPA', 'Pilsner', 'Lager']
+const giantBeer = beers.join('')
+
+console.log(giantBeer) // IPAPilsnerLager
+```
+
+### Array method lastIndexOf
+
+Gives the last index at which a given element can be found.
+
+```
+const beers = ['IPA', 'Pilsner', 'Lager', 'IPA']
+const lastIPA = beers.lastIndexOf('IPA')
+
+console.log(lastIPA) // 3
+```

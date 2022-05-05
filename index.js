@@ -1,3 +1,4 @@
-const randomNumber = 3.1475926535
+const beers = ['IPA', 'Pilsner', 'Lager', 'IPA']
+const lastIPA = beers.lastIndexOf('IPA')
 
-console.log(randomNumber.toPrecision(4)) // 3.148
+console.log(lastIPA) // 3
