@@ -446,3 +446,114 @@ const lastIPA = beers.lastIndexOf('IPA')
 
 console.log(lastIPA) // 3
 ```
+
+### Array method .map()
+
+Creates a new array populated with the results of running a function on every element in the array.
+
+```
+const beersList = ['Juicy Jack', 'Stoney Hazy', 'PebbleHead', 'IPA']
+const sanTanBeers = beersList.map(beer => `${beer} - San Tan Brewing`)
+
+console.log(sanTanBeers) // ['Juicy Jack - San Tan Brewing', 'Stoney Hazy - San Tan Brewing', 'PebbleHead - San Tan Brewing', 'IPA - San Tan Brewing']
+```
+
+### Array method .pop()
+
+Removes the last element from an array and returns that element. This method changes the length of the array.
+
+```
+const beersList = ['Juicy Jack', 'Stoney Hazy', 'PebbleHead']
+const lastBeer = beersList.pop()
+
+console.log(lastBeer) // PebbleHead
+```
+
+### Array method push()
+
+Adds one or more elements to the end of an array and returns the new length of the array.
+
+```
+const beersList = ['Juicy Jack', 'Stoney Hazy', 'PebbleHead']
+beersList.push('MoonJuice', 'Devil\'s Ale')
+
+console.log(beersList) // ["Juicy Jack", "Stoney Hazy", "PebbleHead", "MoonJuice", "Devil's Ale"]
+```
+
+### Array method .reduce()
+
+Executes a user-supplied "reducer" callback function on each element of the array, in order, passing the return value from the calculation on the preceding element.
+
+```
+const values = [1, 2, 3, 4]
+const sumValue = values.reduce((prevValue, currentValue) => prevValue + currentValue)
+
+console.log(sumValue) // 10
+```
+
+### Array method shift()
+
+Removes the first element from an array and returns that element. This method changes the length of the array.
+
+```
+const beersList = ['Juicy Jack', 'Stoney Hazy', 'PebbleHead']
+const firstBeer = beersList.shift()
+
+console.log(firstBeer) // Juicy Jack
+console.log(beersList) // ['Stoney Hazy', 'PebbleHead']
+```
+
+### Array method slice()
+
+Returns a shallow copy of a portion of an array into a new array selected from start to end, end not included.
+
+```
+const beersList = ['Juicy Jack', 'Stoney Hazy', 'PebbleHead', 'MoonJuice']
+const firstBeer = beersList.slice(1, 3)
+
+console.log(firstBeer) // ['Stoney Hazy', 'PebbleHead']
+```
+
+### Array method some()
+
+Tests whether at least one element in the array passes the test implemented by the provided function, returns true if true, false if false.
+
+```
+const grades = [90, 92, 85, 72, 78, 94]
+const lowGrade = grades.some(grade => grade < 70)
+
+console.log(lowGrade) // false
+```
+
+### Array method sort()
+
+sorts the elements of an array in-place and returns the sorted array. Default order is ascending, converting elements into strings, then comparing their sequences of UTF-16 code units values.
+
+```
+const grades = [1, 10, 2, 90, 92, 85, 72, 78, 94]
+const sortedGrades = grades.sort((a, b) => a - b)
+
+console.log(sortedGrades) // [1, 2, 10, 72, 78, 85, 90, 92, 94]
+```
+
+### Array method toString()
+
+Returns a string representing the specified array.
+
+```
+const grades = [1, 10, 2, 90, 92, 85, 72, 78, 94]
+const stringGrades = grades.toString()
+
+console.log(stringGrades) // 1,10,2,90,92,85,72,78,94
+```
+
+### Array method unshift()
+
+Adds one or more elements to the beginning of an array and returns the new length of the array.
+
+```
+const grades = [1, 10, 2, 90, 92, 85, 72, 78, 94]
+grades.unshift(100)
+
+console.log(grades) // [100, 1, 10, 2, 90, 92, 85, 72, 78, 94]
+```
