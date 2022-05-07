@@ -557,3 +557,129 @@ grades.unshift(100)
 
 console.log(grades) // [100, 1, 10, 2, 90, 92, 85, 72, 78, 94]
 ```
+
+## Object
+
+### Object method assign()
+
+Copies all enumerable own properties from one or more source objects to a target object. Returns the modified target object.
+
+```
+const car = {
+  wheels: 4,
+  doors: 4,
+  noise: 'vroom'
+}
+
+const truck = Object.assign({}, car)
+truck.doors = 2
+
+console.log(car) // {wheels: 4, doors: 4, noise: 'vroom'}
+console.log(truck) // {wheels: 4, doors: 2, noise: 'vroom'}
+```
+
+### Object method entries()
+
+Returns an array of a given object's own enumerable string-keyed property [key, value] pairs.
+
+```
+const car = {
+  wheels: 5,
+  doors: 4,
+  noise: 'vroom'
+}
+
+const carEntries = Object.entries(car)
+
+console.log(carEntries) // (3) [Array(2), Array(2), Array(2)]
+```
+
+### Object method .freeze()
+
+Freezes and object, a frozen object can no longer be changed; freezing prevents new properties from being added, existing properties from being removed, prevents values of existing properties from being changed.
+
+```
+const car = {
+  wheels: 5,
+  doors: 4,
+  noise: 'vroom'
+}
+
+Object.freeze(car)
+car.wheels = 3
+
+console.log(car) // {wheels: 5, doors: 4, noise: 'vroom'}
+```
+
+### Object method .is()
+
+Determines whether two values are the same value.
+
+```
+const car = {
+  wheels: 5,
+  doors: 4,
+  noise: 'vroom'
+}
+
+console.log(Object.is(car.wheels, 5)) // true
+```
+
+### Object method .isFrozen()
+
+Determines if an object is frozen.
+
+```
+const car = {
+  wheels: 5,
+  doors: 4,
+  noise: 'vroom'
+}
+
+Object.freeze(car)
+car.wheels = 3
+
+console.log(Object.isFrozen(car)) // true
+```
+
+### Object method .keys()
+
+Returns an array of a given objects own enumerable property names.
+
+```
+const car = {
+  wheels: 5,
+  doors: 4,
+  noise: 'vroom'
+}
+
+console.log(Object.keys(car)) // ['wheels', 'doors', 'noise']
+```
+
+### Object method .hasOwnProperty()
+
+Returns a boolean indicating whether the object has the specified property as it's own property.
+
+```
+const car = {
+  wheels: 5,
+  doors: 4,
+  noise: 'vroom'
+}
+
+console.log(car.hasOwnProperty('wheels')) // true
+```
+
+### Object method .values()
+
+Returns an array of a given object's own enumerable property values.
+
+```
+const car = {
+  wheels: 5,
+  doors: 4,
+  noise: 'vroom'
+}
+
+console.log(Object.values(car)) // [5, 4, 'vroom']
+```

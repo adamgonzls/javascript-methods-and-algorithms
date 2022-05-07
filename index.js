@@ -1,4 +1,7 @@
-const grades = [1, 10, 2, 90, 92, 85, 72, 78, 94]
-grades.unshift(100)
+const car = {
+  wheels: 5,
+  doors: 4,
+  noise: 'vroom'
+}
 
-console.log(grades) // [100, 1, 10, 2, 90, 92, 85, 72, 78, 94]
+console.log(Object.values(car)) // [5, 4, 'vroom']
