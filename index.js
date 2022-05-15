@@ -1,7 +1,3 @@
-const car = {
-  wheels: 5,
-  doors: 4,
-  noise: 'vroom'
-}
+const randomZeroToTen = Math.floor(Math.random() * 10) + 1
 
-console.log(Object.values(car)) // [5, 4, 'vroom']
+console.log(randomZeroToTen) // random number 0 to 10

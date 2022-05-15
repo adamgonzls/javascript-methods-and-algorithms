@@ -558,6 +558,27 @@ grades.unshift(100)
 console.log(grades) // [100, 1, 10, 2, 90, 92, 85, 72, 78, 94]
 ```
 
+## Operators
+
+### Spread syntax (...)
+
+Allows an iterable such as an array expression or string to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected.
+
+```
+const sentenceArr = ['My', 'name', 'is', 'Jack']
+
+console.log(sentenceArr) // ['My', 'name', 'is', 'Jack']
+console.log(...sentenceArr) // My name is Jack
+```
+
+```
+// better way to create array literals
+const parts = ['shoulders', 'knees']
+const fullBody = ['head', ...parts, 'and', 'toes']
+
+console.log(fullBody) // ['head', 'shoulders', 'knees', 'and', 'toes']
+```
+
 ## Object
 
 ### Object method assign()
@@ -682,4 +703,100 @@ const car = {
 }
 
 console.log(Object.values(car)) // [5, 4, 'vroom']
+```
+
+## Math
+
+### Math method round()
+
+Returns the value of a number rounded to the nearest integer.
+
+```
+const gpa = 3.4
+const roundedGpa = Math.round(gpa)
+
+console.log(roundedGpa) // 3
+```
+
+### Math method pow()
+
+Given two arguments, base and exponent, returns a number representing the given base taken to the power of the given exponent.
+
+```
+const base = 5
+const exponent = 3
+const result = Math.pow(base, exponent)
+
+console.log(result) // 125
+```
+
+### Math method sqrt()
+
+Returns the square root of a number.
+
+```
+const num = 25
+const squareRoot = Math.sqrt(num)
+
+console.log(squareRoot) // 5
+```
+
+### Math method ceil()
+
+Rounds a number up to the next largest integer.
+
+```
+const money = 0.93
+const generousMoney = Math.ceil(money)
+
+console.log(generousMoney) // 1
+```
+
+### Math method floor()
+
+Returns the largest integer less than or equal to a given number.
+
+```
+const money = 1.93
+const scroogeMoney = Math.floor(money)
+
+console.log(scroogeMoney) // 1
+```
+
+### Math method min()
+
+Returns the lowest-valued number passed to it, or NaN if any parameter isn't a number and can't be converted into one.
+
+```
+const classGrades = [99, 100, 89, 77, 63, 85]
+const lowestGrade = Math.min(...classGrades)
+
+console.log(lowestGrade) // 63
+```
+
+### Math method max()
+
+Returns the lowest-valued number passed to it, or NaN if any parameter isn't a number and can't be converted into one.
+
+```
+const classGrades = [99, 100, 89, 77, 63, 85]
+const lowestGrade = Math.max(...classGrades)
+
+console.log(lowestGrade) // 100
+```
+
+### Math method random()
+
+Returns a floating-point pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1).
+
+```
+const randomZeroToNine = Math.floor(Math.random() * 10)
+
+console.log(randomZeroToNine) // random number 0 to 9
+```
+
+```
+const randomZeroToTen = Math.floor(Math.random() * 10) + 1
+
+console.log(randomZeroToTen) // random number 0 to 10
 ```
