@@ -867,3 +867,157 @@ console.log(fizzBuzz(5))
 console.log(fizzBuzz(4))
 console.log(fizzBuzz(15))
 ```
+
+### Challenge: Factorial
+
+---
+
+`Take a number and return the factorial`
+
+```
+const getFactorial = (num) => {
+  let result = 1
+  for (let i = 1; i <= num; i++) {
+    result = result * i
+  }
+  return result
+}
+
+console.log(getFactorial(5)) // 120
+console.log(getFactorial(4)) // 24
+console.log(getFactorial(0)) // 1
+console.log(getFactorial(10)) // 3628800
+```
+
+### Challenge: Reverse a String
+
+---
+
+`Take in a string and reverse it's value`
+
+```
+const reverseString = (string) => {
+  return string.split('').reverse().join('')
+}
+
+console.log(reverseString('practice practice practice'))
+console.log(reverseString('javascript'))
+```
+
+### Challenge: Palindrome
+
+---
+
+`take in a string, ignore special characters, spaces, and underscores, make case insensitive, and check if is palindrome`
+
+```
+const palindrome = (string) => {
+  const cleanString = string.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+  const reverseString = cleanString.split('').reverse().join('')
+
+  return reverseString === cleanString
+}
+
+console.log(palindrome('A man, a plan, a canal. Panama.')) // true
+console.log(palindrome('My age is 0, 0 si ega ym.')) // true
+console.log(palindrome('legendary')) // false
+console.log(palindrome('.O_O(:/-:)O-O')) // true
+```
+
+### Challenge: Longest Length
+
+---
+
+`take in a string, return the length of the longest string`
+
+```
+const getLongestString = (string) => {
+  const longestString = string
+    .split(' ')
+    .sort((word1, word2) => {
+      return word1.length - word2.length
+    })
+    .pop().length
+
+  return longestString
+}
+
+console.log(getLongestString('I am learning to code'))
+console.log(getLongestString('I would like to work for Gooooogle'))
+console.log(getLongestString("Ain't no fun if the homie don't code none"))
+```
+
+### Challenge: Title Case
+
+---
+
+`Take in a string, capitalize the first letter of each word`
+
+```
+const titleCaseString = (string) => {
+  const updatedString = string
+    .split(' ')
+    .map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1)
+    })
+    .join(' ')
+  return updatedString
+}
+
+console.log(titleCaseString('I am a going to be successful'))
+console.log(titleCaseString('I would like to work for Google'))
+```
+
+### Challenge: Repeat String
+
+---
+
+`Take in a string and a number, repeat the string X number of times`
+
+```
+const stringRepeater = (string, amount) => {
+  let repeatedString = ''
+  for (let i = 0; i <= amount - 1; i++) {
+    repeatedString += string
+  }
+
+  return repeatedString
+}
+
+console.log(stringRepeater('codinggod', 2))
+```
+
+```
+const stringRepeater = (string, amount) => {
+  return string.repeat(amount)
+}
+
+console.log(stringRepeater('codinggod', 2))
+```
+
+### Challenge: Is Digit
+
+---
+
+`Take in a string and return whether or not it is a digit`
+
+```
+const checkIfDigit = (text) => {
+  return !!text.match('^[0-9]+$')
+}
+
+console.log(checkIfDigit('1'))
+console.log(checkIfDigit('33435'))
+console.log(checkIfDigit('d34'))
+console.log(checkIfDigit('d'))
+```
+
+### Challenge: Longest Word
+
+---
+
+`Take in a string, return the largest word`
+
+```
+
+```
