@@ -800,3 +800,70 @@ const randomZeroToTen = Math.floor(Math.random() * 10) + 1
 
 console.log(randomZeroToTen) // random number 0 to 10
 ```
+
+## Algorithm Challenges
+
+### Challenge: Add Two Numbers
+
+---
+
+`Write a function that takes in two numbers and adds them together`
+
+```
+const addTwoNumbers = (num1, num2) => num1 + num2
+
+console.log(addTwoNumbers(5, 6))
+console.log(addTwoNumbers(10, 0))
+```
+
+### Challenge: Introduction
+
+---
+
+`Write a function that takes in two strings and returns them in a introduction paragraph`
+
+```
+const introductionParagraph = (firstName = 'Friend', lastName = 'Friendly') =>
+  `Hi, my name is ${firstName} ${lastName}`
+
+console.log(introductionParagraph('Adam'))
+console.log(introductionParagraph('Adam', 'Gonzales'))
+```
+
+### Challenge: Convert Celsius to Fahrenheit
+
+---
+
+`Convert Celsius to Fahrenheit`
+
+```
+const convertCelsiusToFahrenheit = (celsius) => celsius * 1.8 + 32
+
+console.log(convertCelsiusToFahrenheit(30))
+console.log(convertCelsiusToFahrenheit(-30))
+console.log(convertCelsiusToFahrenheit(0))
+```
+
+### Challenge: FizzBuzz
+
+---
+
+`If a number is divisible by 3, return 'fizz', if divisible by 5, return 'buzz', divisible by 3 and 5, return 'fizzbuzz', else return nothing`
+
+```
+const fizzBuzz = (num) => {
+  if (num % 3 === 0 && num % 5 === 0) {
+    return 'fizzbuzz'
+  } else if (num % 3 === 0) {
+    return 'fizz'
+  } else if (num % 5 === 0) {
+    return 'buzz'
+  }
+  return ''
+}
+
+console.log(fizzBuzz(3))
+console.log(fizzBuzz(5))
+console.log(fizzBuzz(4))
+console.log(fizzBuzz(15))
+```
