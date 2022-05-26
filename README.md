@@ -1019,5 +1019,139 @@ console.log(checkIfDigit('d'))
 `Take in a string, return the largest word`
 
 ```
+const getLongestWord = (string) => {
+  const longestWord = string
+    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .split(' ')
+    .sort((a, b) => {
+      return a.length - b.length
+    })
+    .pop()
+  return longestWord
+}
+
+console.log(getLongestWord('Ready, steady, go!')) // steady
+console.log(getLongestWord('Ready[[[, steady, go!')) // steady
+console.log(getLongestWord("I'm so excited, I can wait to meet you there")) // excited
+console.log(getLongestWord('ABCd')) // ABCd
+```
+
+### Challenge: Valid Time
+
+---
+
+`Take in a string, return whether it is a valid time or not`
+
+```
+const isValidTime = (time) => {
+  const [hours, minutes] = time.split(':')
+  if (hours > 23 || minutes > 59) {
+    return false
+  }
+  return true
+}
+
+console.log(isValidTime('24:00')) // false
+console.log(isValidTime('23:31')) // true
+console.log(isValidTime('22:00')) // true
+console.log(isValidTime('22:66')) // false
+```
+
+### Challenge: Missing Number
+
+---
+
+`Take in an array of numbers, find the number that is missing between 0 and the highest value in the array`
+
+```
+const findMissingNumber = (numberArray) => {
+  const sortedArray = numberArray.sort()
+  for (let i = 0; i < sortedArray.length; i++) {
+    if (i !== sortedArray[i]) {
+      return i
+    }
+  }
+}
+
+console.log(findMissingNumber([0, 3, 5, 8, 4, 6, 1, 9, 7]))
+console.log(findMissingNumber([1, 2, 5, 0, 6, 7, 9, 3, 4]))
+console.log(findMissingNumber([0, 2, 3, 4]))
+```
+
+### Challenge: Duplicate Numbers
+
+---
+
+`Take in an array of numbers, return whether there are any duplicate numbers`
+
+```
+const duplicateNumbersPresent = (numberArray) => {
+  const sortedArray = numberArray.sort()
+  for (let i = 0; i < sortedArray.length; i++) {
+    if (sortedArray[i] === sortedArray[i + 1]) {
+      return true
+    }
+  }
+  return false
+}
+
+console.log(duplicateNumbersPresent([1, 2, 3, 1]))
+console.log(duplicateNumbersPresent([3, 1]))
+console.log(duplicateNumbersPresent([0, 4, 5, 0, 3, 6]))
+
+```
+
+### Challenge: Digit Sum
+
+---
+
+`Take a string, parse out the numbers and add them together`
+
+```
+const sumOfNumbers = (string) => {
+  let sum = 0
+  const numbersArray = string.match(/\d+/g) || []
+
+  numbersArray.forEach((num) => {
+    sum += Number(num)
+  })
+
+  return sum
+}
+
+console.log(sumOfNumbers('2 apples, 12 oranges'))
+console.log(sumOfNumbers('123450'))
+console.log(sumOfNumbers('Your payment method is invalid'))
+```
+
+### Challenge: First Duplicate
+
+---
+
+`Take an array of positive numbers and return the first number that is duplicated. Return -1 if no duplicates are found`
+
+```
+const firstDuplicate = (numbersArray) => {
+  for (let i = 0; i < numbersArray.length; i++) {
+    if (numbersArray.lastIndexOf(numbersArray[i]) !== i) {
+      return numbersArray[i]
+    }
+  }
+  return -1
+}
+
+console.log(firstDuplicate([2, 3, 3, 1, 5, 2]))
+console.log(firstDuplicate([6, 6]))
+console.log(firstDuplicate([2, 1, 3]))
+console.log(firstDuplicate([3, 1, 4, 3, 1]))
+```
+
+### Challenge: Amend the Sentence
+
+---
+
+`Take in a string that has no spaces but has words denoted with capital letters and return a lower-case spaced-out string`
+
+```
 
 ```

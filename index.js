@@ -1,5 +1,4 @@
-const getLongestWord = (string) => {}
+const fixSentence = (string) => {}
 
-console.log(getLongestWord('Ready, steady, go!'))
-console.log(getLongestWord('Ready[[[, steady, go!'))
-console.log(getLongestWord('ABCd'))
+console.log(fixSentence('CodingIsAFunTime'))
+console.log(fixSentence("I'llBeThere"))
