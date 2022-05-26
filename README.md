@@ -1153,5 +1153,99 @@ console.log(firstDuplicate([3, 1, 4, 3, 1]))
 `Take in a string that has no spaces but has words denoted with capital letters and return a lower-case spaced-out string`
 
 ```
+const fixSentence = (string) => {
+  const sentence = string.split(/(?=[A-Z])/).join(' ')
+  return sentence
+}
 
+console.log(fixSentence('CodingIsAFunTime!')) // Coding Is A Fun Time!
+console.log(fixSentence("I'llBeThere.")) // I'll Be There.
+```
+
+### Challenge: Sum of Differences
+
+---
+
+`Take in an array with two positive numbers and find the sum of all the numbers including and between the two`
+
+```
+const sumAllNumbers = (numberArray) => {
+  const upperLimit = Math.max(...numberArray)
+  const lowerLimit = Math.min(...numberArray)
+  let sum = 0
+  for (let i = lowerLimit; i <= upperLimit; i++) {
+    sum += i
+  }
+  return sum
+}
+
+console.log(sumAllNumbers([10, 5]))
+console.log(sumAllNumbers([3, 7]))
+console.log(sumAllNumbers([10, 1]))
+```
+
+### Challenge: Unique Values
+
+---
+
+`Take in two arrays and return an array of the unique values`
+
+```
+const getUniqueValues = (array1, array2) => {
+  const uniqueArray = []
+  for (const value of array1) {
+    if (!array2.includes(value) && !uniqueArray.includes(value)) {
+      uniqueArray.push(value)
+    }
+  }
+
+  for (const value of array2) {
+    if (!array1.includes(value) && !uniqueArray.includes(value)) {
+      uniqueArray.push(value)
+    }
+  }
+
+  return uniqueArray
+}
+
+console.log(getUniqueValues([1, 2, 3, 5], [1, 2, 3, 4, 5])) // [4]
+console.log(getUniqueValues([1, 'calf', 3, 'piglet'], [7, 'filly'])) // [1, 'calf', 3, 'piglet', 7, 'filly']
+console.log(getUniqueValues([2, 1, 3], [3, 2, 1])) // []
+
+```
+
+### Challenge: Add Up Digits
+
+---
+
+`Take in a number, return the sum of it's digits`
+
+```
+const sumDigits = (number) => {
+  const numberArray = Array.from(String(number))
+  let numberSum = 0
+  for (let i = 0; i < numberArray.length; i++) {
+    numberSum += Number(numberArray[i])
+  }
+  return numberSum
+}
+
+console.log(sumDigits(29)) // 11
+console.log(sumDigits(48)) // 12
+console.log(sumDigits(111)) // 3
+```
+
+```
+const sumDigits = (number) => {
+  const numberSum = number
+    .toString()
+    .split('')
+    .reduce((num1, num2) => Number(num1) + Number(num2))
+  return numberSum
+}
+
+console.log(sumDigits(29)) // 11
+console.log(sumDigits(48)) // 12
+console.log(sumDigits(111)) // 3
+console.log(sumDigits(5)) // 5
 ```
